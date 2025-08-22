@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7ew5dp444177"]
+
+[ext_resource type="Script" uid="uid://ba72n37kmxdge" path="res://personnage.gd" id="1_2y57b"]
+[ext_resource type="Texture2D" uid="uid://dental3w1pk62" path="res://personnage/character_green_front.png" id="1_a2nqg"]
+[ext_resource type="Texture2D" uid="uid://b6ev6fyt8elct" path="res://personnage/character_green_duck.png" id="2_2y57b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lyp4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a2nqg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2y57b")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}]
+
+[node name="Personnage" type="Node2D"]
+script = ExtResource("1_2y57b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lyp4m")

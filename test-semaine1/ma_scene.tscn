@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dduqn6jojval4"]
+
+[ext_resource type="Texture2D" uid="uid://c4h06hnjfnavw" path="res://icon.svg" id="1_luicf"]
+[ext_resource type="Texture2D" uid="uid://df3yyl05k5y8y" path="res://brick_high_6.png" id="2_3v4tl"]
+[ext_resource type="Texture2D" uid="uid://dnrn71aawmcgk" path="res://brick_high_1.png" id="3_53h1s"]
+[ext_resource type="Texture2D" uid="uid://dyv6r1qyrscc0" path="res://personnage/character_green_idle.png" id="4_vym78"]
+[ext_resource type="Texture2D" uid="uid://clvgk775ptvqu" path="res://personnage/character_green_walk_a.png" id="5_30885"]
+[ext_resource type="Texture2D" uid="uid://crwufk8mjue60" path="res://personnage/character_green_walk_b.png" id="6_b8ddi"]
+[ext_resource type="Texture2D" uid="uid://msr2r3r23kbd" path="res://personnage/character_green_jump.png" id="7_gbml0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyiip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_30885")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b8ddi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gbml0")
+}],
+"loop": true,
+"name": &"sauter",
+"speed": 5.0
+}]
+
+[node name="MaScene" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(129, 99)
+texture = ExtResource("1_luicf")
+
+[node name="Icon3" type="Sprite2D" parent="Icon"]
+position = Vector2(177, 178)
+texture = ExtResource("1_luicf")
+
+[node name="BrickHigh6" type="Sprite2D" parent="Icon"]
+position = Vector2(482, 179)
+texture = ExtResource("2_3v4tl")
+
+[node name="BrickHigh1" type="Sprite2D" parent="Icon"]
+position = Vector2(401, 125)
+texture = ExtResource("3_53h1s")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(347, 105)
+texture = ExtResource("1_luicf")
+
+[node name="CharacterGreenIdle" type="Sprite2D" parent="."]
+position = Vector2(102, 488)
+texture = ExtResource("4_vym78")
+
+[node name="Personnage" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tyiip")
