@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="projet_godot"
+config/name="projet_godot-semaine-1"
 run/main_scene="uid://bf27mbjdsyqlv"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"

@@ -1,7 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf27mbjdsyqlv"]
+[gd_scene load_steps=9 format=3 uid="uid://bf27mbjdsyqlv"]
 
 [ext_resource type="Texture2D" uid="uid://df3yyl05k5y8y" path="res://brick_high_6.png" id="1_2ojn0"]
 [ext_resource type="PackedScene" uid="uid://c7ew5dp444177" path="res://personnage.tscn" id="2_kws4w"]
+[ext_resource type="Script" uid="uid://c06uy3rreamiq" path="res://personnage_bleu.gd" id="3_l8iyw"]
+[ext_resource type="Texture2D" uid="uid://d4dhjgrhwg3r2" path="res://p2_spritesheet.png" id="4_dw147"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8iyw"]
+atlas = ExtResource("4_dw147")
+region = Rect2(210, 0, 70, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw147"]
+atlas = ExtResource("4_dw147")
+region = Rect2(70, 94, 70, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85k1n"]
+atlas = ExtResource("4_dw147")
+region = Rect2(140, 94, 70, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3r34w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8iyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw147")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8iyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85k1n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Niveau1" type="Node2D"]
 
@@ -26,3 +60,12 @@ position = Vector2(761, 443)
 
 [node name="Personnage3" parent="." instance=ExtResource("2_kws4w")]
 position = Vector2(472, 443)
+
+[node name="PersonnageBleu" type="Node2D" parent="."]
+position = Vector2(197, 365)
+script = ExtResource("3_l8iyw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PersonnageBleu"]
+position = Vector2(0, -46)
+sprite_frames = SubResource("SpriteFrames_3r34w")
+frame_progress = 0.117458
